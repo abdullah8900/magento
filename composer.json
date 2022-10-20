@@ -1,5 +1,5 @@
 {
-    "name": "RLTSquare/SizeChart",
+    "name": "Abdullah/SizeChart",
     "description": "Eav attribute showing on Product Description Page",
     "require": {
         "php": ">=7.4"
