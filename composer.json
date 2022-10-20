@@ -1,6 +1,8 @@
 {
     "name": "abdullah1234/size-chart",
     "description": "Eav attribute showing on Product Description Page",
+    "version": "1.0.0",
+        "minimum-stability": "dev",
     "require": {
         "php": ">=7.4"
     }
