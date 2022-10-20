@@ -2,6 +2,6 @@
     "name": "RLTSquare/SizeChart",
     "description": "Eav attribute showing on Product Description Page",
     "require": {
-        "php": ">=7.4",
+        "php": ">=7.4"
     }
 }
