@@ -1,0 +1,84 @@
+<?php
+
+$product = $block->getProduct();
+$productArr = $product->get();
+
+if (isset($productArr["size_chart_table_html"]) && !empty($productArr["size_chart_table_html"])):
+    $sizeChartContent = $productArr["size_chart_table_html"];
+    ?>
+
+    <div class="size-chart-btn">
+        <button type="button" class="action rltsizechartpopup" data-trigger="trigger">
+            <span data-bind="i18n: 'Size Chart'"></span>
+        </button>
+    </div>
+
+    <div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'trigger': '.rltsizechartpopup[data-trigger=trigger]',
+            'responsive': true,
+            'innerScroll': true,
+            'modalClass' : 'rltmodalpopupsizechart',
+            'buttons': [{
+                text: jQuery.mage.__('Close'),
+                class: 'action'
+            }]
+        }}">
+        <div class="content rltsizechart" style="display: none">
+            <?php echo $sizeChartContent; ?>
+        </div>
+    </div>
+    <style>
+        .catalog-product-view .swatch-attribute-options {
+            /*z-index: 900;*/
+        }
+
+        .size-chart-btn {
+            padding-bottom: 15px;
+        }
+
+        /*.rltmodalpopupsizechart{*/
+        /*	z-index: 1005 !important;*/
+        /*}*/
+        @media screen and (min-width: 401px) and (max-width: 767px) {
+
+            .size-chart-table {
+                font-size: 14px;
+            }
+
+            .rltmodalpopupsizechart {
+                left: 0 !important;
+            }
+
+            .rltmodalpopupsizechart table td {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+
+            .size-chart-table {
+                font-size: 14px;
+            }
+
+            .rltmodalpopupsizechart {
+                left: 0 !important;
+            }
+
+            .rltmodalpopupsizechart table td {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        require(["jquery"],
+            ($) => {
+                $(document).ready(() => {
+                    setTimeout(() => {
+                        $(".rltsizechart").css("display", "block")
+                    }, 2000)
+                });
+            });
+    </script>
+<?php endif; ?>
